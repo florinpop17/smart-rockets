@@ -33,8 +33,10 @@ class Population{
     }
 
     selection() {
-        var parentA = random(this.matingPool);
-        var parentB = random(this.matingPool);
+        var parentA = random(this.matingPool).dna;
+        var parentB = random(this.matingPool).dna;
+
+        var child = parentA.crossover(parentB);
     }
 
     updateRockets(){
