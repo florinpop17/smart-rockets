@@ -49,6 +49,8 @@ class Population{
             var parentB = random(this.matingPool).dna;
 
             var child = parentA.crossover(parentB);
+            child.mutation();
+
             newRockets.push(new Rocket(child));
         });
 
