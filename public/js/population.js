@@ -9,6 +9,17 @@ class Population{
         }
     }
 
+    calculateHowManyReached() {
+        var x = 0;
+
+        this.rockets.forEach(rocket => {
+            if(rocket.completed){
+                x++;
+            }
+        });
+        return x;
+    }
+
     evaluate() {
         var maxFitness = 0;
         this.rockets.forEach(rocket => {
