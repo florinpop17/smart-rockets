@@ -2,7 +2,7 @@ class Population{
     constructor(){
         this.rockets = [];
         this.matingPool = [];
-        this.popSize = 50;
+        this.popSize = 100;
 
         for(var i=0; i<this.popSize; i++){
             this.rockets.push(new Rocket());
