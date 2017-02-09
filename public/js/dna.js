@@ -14,12 +14,12 @@ class DNA{
 
     crossover(partner) {
         var newGenes = [];
-        var mid = floor(random(genes.length));
-        genes.forEach((gene, idx) => {
+        var mid = floor(random(this.genes.length));
+        this.genes.forEach((gene, idx) => {
             if(idx > mid){
-                newGenes[idx] = this.genes[idx];
+                newGenes[idx] = gene;
             } else {
-                newGenes[idx] = this.partner[idx];
+                newGenes[idx] = partner.genes[idx];
             }
         });
         return new DNA(newGenes);

@@ -10,7 +10,6 @@ class Population{
     }
 
     evaluate() {
-
         var maxFitness = 0;
         this.rockets.forEach(rocket => {
             rocket.calcFitness();
@@ -41,6 +40,8 @@ class Population{
             var child = parentA.crossover(parentB);
             newRockets.push(new Rocket(child));
         });
+
+        this.rockets = newRockets;
     }
 
     updateRockets(){
