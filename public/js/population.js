@@ -28,9 +28,13 @@ class Population{
             for(var i=0; i<n; i++){
                 this.matingPool.push(rocket);
             }
-
         });
 
+    }
+
+    selection() {
+        var parentA = random(this.matingPool);
+        var parentB = random(this.matingPool);
     }
 
     updateRockets(){
