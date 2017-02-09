@@ -1,23 +1,28 @@
 class DNA{
-    constructor(){
-        this.genes = [];
-        for(var i=0; i<lifespan; i++){
-            this.genes[i] = p5.Vector.random2D();
-            this.genes[i].setMag(0.5);
+    constructor(genes){
+
+        if(genes){
+            this.genes = genes;
+        } else {
+            this.genes = [];
+            for(var i=0; i<lifespan; i++){
+                this.genes[i] = p5.Vector.random2D();
+                this.genes[i].setMag(0.5);
+            }
         }
     }
 
     crossover(partner) {
-        var newDNA = [];
-        var mid = flood(random(genes.length));
+        var newGenes = [];
+        var mid = floor(random(genes.length));
         genes.forEach((gene, idx) => {
             if(idx > mid){
-                newDNA[idx] = this.genes[idx];
+                newGenes[idx] = this.genes[idx];
             } else {
-                newDNA[idx] = this.partner[idx];
+                newGenes[idx] = this.partner[idx];
             }
         });
 
-        return newDNA;
+        return new DNA(newGenes);
     }
 }
