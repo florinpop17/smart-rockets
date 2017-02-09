@@ -5,7 +5,7 @@ class Rocket{
         this.acc = createVector();
         this.completed = false;
         this.crashed = false;
-        this.time = 0;
+        this.timeToAchieve = 0;
 
         if(dna){
             this.dna = dna;
@@ -18,7 +18,7 @@ class Rocket{
         var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
         if(d < 10){
             this.completed = true;
-            this.time = 1 / count;
+            this.timeToAchieve = 1 / count;
         }
 
         this.applyForce(this.dna.genes[count]);
@@ -40,9 +40,9 @@ class Rocket{
         if(this.completed){
             this.fitness *= 10;
 
-            this.fitness *= this.time;
+            this.fitness *= this.timeToAchieve;
 
-            console.log('Count: ',this.time);
+            console.log('Count: ',this.timeToAchieve);
         }
 
         if(this.crashed){
