@@ -1,7 +1,7 @@
 class Rocket{
     constructor() {
         this.pos = createVector(width/2, height);
-        this.vel = p5.Vector.random();
+        this.vel = createVector();
         this.acc = createVector();
     }
 
@@ -20,6 +20,7 @@ class Rocket{
         translate(this.pos.x, this.pos.y);
         rotate(this.vel.heading());
         rectMode(CENTER);
+        fill(255, 150);
         rect(0, 0, 50, 10);
         pop();
     }

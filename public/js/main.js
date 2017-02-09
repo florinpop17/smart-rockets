@@ -1,7 +1,7 @@
 var population;
 
 function setup() {
-    createCanvas(800, 800);
+    createCanvas(600, 900);
 
     population = new Population();
 }
