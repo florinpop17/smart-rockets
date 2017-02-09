@@ -44,15 +44,12 @@ class Population{
 
         this.rockets.forEach(rocket => {
             rocket.fitness /= maxFitness;
-            var n = rocket.fitness * 500;
+            var n = rocket.fitness * 100;
 
             for(var i=0; i<n; i++){
                 this.matingPool.push(rocket);
             }
         });
-
-
-        console.log('MaxFitness: '+maxFitness);
     }
 
     selection() {

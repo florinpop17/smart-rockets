@@ -7,7 +7,7 @@ class DNA{
             this.genes = [];
             for(var i=0; i<lifespan; i++){
                 this.genes[i] = p5.Vector.random2D();
-                this.genes[i].setMag(0.3);
+                this.genes[i].setMag(0.5);
             }
         }
     }
@@ -29,7 +29,7 @@ class DNA{
         this.genes.forEach(gene => {
             if(random(1) < 0.1){
                 gene = p5.Vector.random2D();
-                gene.setMag(0.3);
+                gene.setMag(0.5);
             }
         });
     }

@@ -18,7 +18,7 @@ class Rocket{
         var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
         if(d < 20){
             if(!this.completed){
-                this.timeToAchieve = 1 / count;
+                this.timeToAchieve = 100 / count;
                 console.log(count);
             }
 
@@ -46,7 +46,8 @@ class Rocket{
 
             this.fitness *= this.timeToAchieve;
 
-            console.log('Count: ',this.timeToAchieve);
+            // console.log('Count: ',this.timeToAchieve);
+            console.log('----------------------');
         }
 
         if(this.crashed){
@@ -57,7 +58,7 @@ class Rocket{
     haveCrashed() {
 
         // Object crash
-        if(this.pos.x > obstacle.x && this.pos.x < obstacle.x + obstacle.w && this.pos.y > obstacle.y && this.pos.y < obstacle.y + obstacle.h){
+        if(obstacle && this.pos.x > obstacle.x && this.pos.x < obstacle.x + obstacle.w && this.pos.y > obstacle.y && this.pos.y < obstacle.y + obstacle.h){
             this.crashed = true;
         }
 
