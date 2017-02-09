@@ -4,6 +4,7 @@ var count = 0; // Used also in rocket.js
 var lifeP;
 
 var target;
+var targetSize = 30;
 
 function setup() {
     createCanvas(600, 600);
@@ -26,7 +27,7 @@ function draw() {
     }
 
     fill(255, 0, 255);
-    ellipse(target.x, target.y, 16, 16);
+    ellipse(target.x, target.y, targetSize, targetSize);
 
     population.updateRockets();
 }
