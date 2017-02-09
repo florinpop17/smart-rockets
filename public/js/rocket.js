@@ -17,8 +17,12 @@ class Rocket{
     update() {
         var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
         if(d < 20){
+            if(!this.completed){
+                this.timeToAchieve = 1 / count;
+                console.log(count);
+            }
+
             this.completed = true;
-            this.timeToAchieve = 1 / count;
         }
 
         this.applyForce(this.dna.genes[count]);
