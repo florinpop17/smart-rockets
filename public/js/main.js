@@ -1,14 +1,13 @@
-var rocket;
+var population;
 
 function setup() {
     createCanvas(800, 800);
 
-    rocket = new Rocket();
+    population = new Population();
 }
 
 function draw() {
     background(51);
 
-    rocket.update();
-    rocket.show();
+    population.updateRockets();
 }
