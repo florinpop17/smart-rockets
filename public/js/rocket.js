@@ -16,7 +16,7 @@ class Rocket{
 
     update() {
         var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
-        if(d < 10){
+        if(d < 20){
             this.completed = true;
             this.timeToAchieve = 1 / count;
         }
