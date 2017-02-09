@@ -14,6 +14,12 @@ class Rocket{
         this.acc.mult(0);
     }
 
+    calcFitness() {
+        var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
+
+        this.fitness = 1 / d;
+    }
+
     applyForce(force) {
         this.acc.add(force);
     }

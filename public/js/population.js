@@ -8,6 +8,12 @@ class Population{
         }
     }
 
+    evaluate() {
+        this.rockets.forEach(rocket => {
+            rocket.calcFitness();
+        });
+    }
+
     updateRockets(){
         this.rockets.forEach(rocket => {
             rocket.update();

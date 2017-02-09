@@ -24,6 +24,7 @@ function draw() {
         count = 0;
     }
 
+    fill(255, 0, 255);
     ellipse(target.x, target.y, 16, 16);
 
     population.updateRockets();
