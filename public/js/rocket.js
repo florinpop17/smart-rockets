@@ -19,7 +19,7 @@ class Rocket{
         if(d < 20){
             if(!this.completed){
 
-                var equalTo = map(lifespan - count, 0, lifespan, 0, 10);
+                var equalTo = Math.pow(map(lifespan - count, 0, lifespan, 0, 10), 4);
                 this.timeToAchieve = equalTo; //Math.pow(count, 4);
                 console.log(count, equalTo); //Math.pow(count, 4));
             }
