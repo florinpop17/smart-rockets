@@ -9,6 +9,7 @@ class Rocket{
 
     update() {
         this.applyForce(this.dna.genes[this.count]);
+        this.count++;
 
         this.pos.add(this.vel);
         this.vel.add(this.acc);
