@@ -3,6 +3,8 @@ class Rocket{
         this.pos = createVector(width/2, height);
         this.vel = createVector();
         this.acc = createVector();
+        this.completed = false;
+
         if(dna){
             this.dna = dna;
         } else {
@@ -11,11 +13,18 @@ class Rocket{
     }
 
     update() {
+        var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
+        if(d < 10){
+            this.completed = true;
+        }
+
         this.applyForce(this.dna.genes[count]);
 
-        this.pos.add(this.vel);
-        this.vel.add(this.acc);
-        this.acc.mult(0);
+        if(!this.completed) {
+            this.pos.add(this.vel);
+            this.vel.add(this.acc);
+            this.acc.mult(0);
+        }
     }
 
     calcFitness() {
