@@ -18,7 +18,7 @@ class Rocket{
         var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
         if(d < 20){
             if(!this.completed){
-                this.timeToAchieve = 100 / count;
+                this.timeToAchieve = 1000 / count;
                 console.log(count);
             }
 

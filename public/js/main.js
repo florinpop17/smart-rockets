@@ -21,7 +21,7 @@ function setup() {
 
     target = createVector(width/2, 50);
 
-    obstacle = new Obstacle(width / 2 - 125 * 100, height / 2 - 10, 250, 20);
+    obstacle = new Obstacle(width / 2 - 125, height / 2 - 10, 250, 20);
 }
 
 function draw() {
