@@ -14,4 +14,13 @@ class Rocket{
     applyForce(force) {
         this.acc.add(force);
     }
+
+    show() {
+        push();
+        translate(this.pos.x, this.pos.y);
+        rotate(this.vel.heading());
+        rectMode(CENTER);
+        rect(this.pos.x, this.pos.y, 50, 10);
+        pop();
+    }
 }
