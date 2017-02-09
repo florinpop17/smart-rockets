@@ -18,8 +18,10 @@ class Rocket{
         var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
         if(d < 20){
             if(!this.completed){
-                this.timeToAchieve = Math.pow(lifespan - count, 3); //Math.pow(count, 4);
-                console.log(count, Math.pow(lifespan - count, 3)); //Math.pow(count, 4));
+
+                var equalTo = map(lifespan - count, 0, lifespan, 0, 10);
+                this.timeToAchieve = equalTo; //Math.pow(count, 4);
+                console.log(count, equalTo); //Math.pow(count, 4));
             }
 
             this.completed = true;

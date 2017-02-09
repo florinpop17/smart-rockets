@@ -26,11 +26,12 @@ class DNA{
     }
 
     mutation() {
-        this.genes.forEach(gene => {
+        this.genes = this.genes.map((gene,idx) => {
             if(random(1) < 0.05){
                 gene = p5.Vector.random2D();
                 gene.setMag(0.5);
             }
+            return gene;
         });
     }
 }
