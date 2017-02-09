@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/florinpop17/smart-rockets#readme",
   "dependencies": {
+    "body-parser": "^1.16.0",
     "express": "^4.14.1"
   }
 }

@@ -1,7 +1,7 @@
 class Rocket{
     constructor() {
         this.pos = createVector(width/2, height);
-        this.vel = createVector();
+        this.vel = p5.Vector.random();
         this.acc = createVector();
     }
 
