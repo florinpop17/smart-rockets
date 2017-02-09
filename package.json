@@ -1,20 +1,21 @@
 {
-  "name": "smart-rockets",
-  "version": "1.0.0",
-  "description": "Smart rockets using Genetic Algorithm.",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/florinpop17/smart-rockets.git"
-  },
-  "keywords": ['nodejs', 'p5js', 'smart rockets', 'genetic algorithm'],
-  "author": "Florin Pop",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/florinpop17/smart-rockets/issues"
-  },
-  "homepage": "https://github.com/florinpop17/smart-rockets#readme"
+    "name": "smart-rockets",
+    "version": "1.0.0",
+    "description": "Smart rockets using Genetic Algorithm.",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js"
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/florinpop17/smart-rockets.git"
+    },
+    "keywords": ['nodejs', 'p5js', 'smart rockets', 'genetic algorithm'],
+    "author": "Florin Pop",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/florinpop17/smart-rockets/issues"
+    },
+    "homepage": "https://github.com/florinpop17/smart-rockets#readme"
 }
