@@ -1,9 +1,9 @@
 class DNA{
     constructor(){
         this.genes = [];
-        this.lifespan = 200;
-        for(var i=0; i<this.lifespan; i++){
+        for(var i=0; i<lifespan; i++){
             this.genes[i] = p5.Vector.random2D();
+            this.genes[i].setMag(0.1);
         }
     }
 }

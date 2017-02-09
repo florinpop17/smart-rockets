@@ -4,12 +4,10 @@ class Rocket{
         this.vel = createVector();
         this.acc = createVector();
         this.dna = new DNA();
-        this.count = 0;
     }
 
     update() {
-        this.applyForce(this.dna.genes[this.count]);
-        this.count++;
+        this.applyForce(this.dna.genes[count]);
 
         this.pos.add(this.vel);
         this.vel.add(this.acc);
