@@ -22,7 +22,6 @@ class DNA{
                 newGenes[idx] = this.partner[idx];
             }
         });
-
         return new DNA(newGenes);
     }
 }

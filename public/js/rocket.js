@@ -1,9 +1,13 @@
 class Rocket{
-    constructor() {
+    constructor(dna) {
         this.pos = createVector(width/2, height);
         this.vel = createVector();
         this.acc = createVector();
-        this.dna = new DNA();
+        if(dna){
+            this.dna = dna;
+        } else {
+            this.dna = new DNA();
+        }
     }
 
     update() {
