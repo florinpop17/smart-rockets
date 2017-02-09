@@ -5,6 +5,7 @@ class Rocket{
         this.acc = createVector();
         this.completed = false;
         this.crashed = false;
+        this.time = 0;
 
         if(dna){
             this.dna = dna;
@@ -17,6 +18,7 @@ class Rocket{
         var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
         if(d < 10){
             this.completed = true;
+            this.time = 1 / count;
         }
 
         this.applyForce(this.dna.genes[count]);
@@ -33,10 +35,14 @@ class Rocket{
     calcFitness() {
         var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
 
-        this.fitness = map(d, 0, width, width, 0);
+        this.fitness = 1 / (d / 2)
 
         if(this.completed){
             this.fitness *= 10;
+
+            this.fitness *= this.time;
+
+            console.log('Count: ',this.time);
         }
 
         if(this.crashed){
