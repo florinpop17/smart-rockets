@@ -39,7 +39,7 @@ class Rocket{
     calcFitness() {
         var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
 
-        this.fitness = 1 / (d / 2)
+        this.fitness = 1 / d
 
         if(this.completed){
             this.fitness *= 10;
