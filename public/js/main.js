@@ -20,7 +20,7 @@ function setup() {
 
     target = createVector(width/2, 50);
 
-    obstacle = new Obstacle(width / 2, height / 2, 200, 100);
+    obstacle = new Obstacle(width / 2 - 100, height / 2 - 20, 200, 40);
 }
 
 function draw() {
@@ -43,7 +43,7 @@ function draw() {
     fill(255, 0, 255);
     ellipse(target.x, target.y, targetSize, targetSize);
 
-    obstacle.show();
-
     population.updateRockets();
+
+    obstacle.show();
 }

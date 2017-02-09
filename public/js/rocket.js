@@ -4,6 +4,7 @@ class Rocket{
         this.vel = createVector();
         this.acc = createVector();
         this.completed = false;
+        this.crashed = false;
 
         if(dna){
             this.dna = dna;
@@ -20,7 +21,9 @@ class Rocket{
 
         this.applyForce(this.dna.genes[count]);
 
-        if(!this.completed) {
+        this.haveCrashed();
+
+        if(!this.completed && !this.crashed) {
             this.pos.add(this.vel);
             this.vel.add(this.acc);
             this.acc.mult(0);
@@ -34,6 +37,12 @@ class Rocket{
 
         if(this.completed){
             this.fitness *= 10;
+        }
+    }
+
+    haveCrashed() {
+        if(this.pos.x > obstacle.x && this.pos.x < obstacle.x + obstacle.w && this.pos.y > obstacle.y && this.pos.y < obstacle.y + obstacle.h){
+            this.crashed = true;
         }
     }
 
