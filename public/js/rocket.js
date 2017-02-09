@@ -4,7 +4,7 @@ class Rocket{
         this.vel = createVector();
         this.acc = createVector();
         this.dna = new DNA();
-        this.count;
+        this.count = 0;
     }
 
     update() {
