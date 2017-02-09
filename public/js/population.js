@@ -20,6 +20,17 @@ class Population{
         return x;
     }
 
+    calculateHowManyCrashed() {
+        var x = 0;
+
+        this.rockets.forEach(rocket => {
+            if(rocket.crashed){
+                x++;
+            }
+        });
+        return x;
+    }
+
     evaluate() {
         var maxFitness = 0;
         this.rockets.forEach(rocket => {

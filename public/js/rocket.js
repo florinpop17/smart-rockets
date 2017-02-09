@@ -38,10 +38,21 @@ class Rocket{
         if(this.completed){
             this.fitness *= 10;
         }
+
+        if(this.crashed){
+            this.fitness /= 10;
+        }
     }
 
     haveCrashed() {
+
+        // Object crash
         if(this.pos.x > obstacle.x && this.pos.x < obstacle.x + obstacle.w && this.pos.y > obstacle.y && this.pos.y < obstacle.y + obstacle.h){
+            this.crashed = true;
+        }
+
+        // Screen crash
+        if(this.pos.x < 0 || this.pos.x > width || this.pos.y < 0 || this.pos.y > height){
             this.crashed = true;
         }
     }
