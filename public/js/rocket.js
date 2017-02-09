@@ -18,8 +18,8 @@ class Rocket{
         var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
         if(d < 20){
             if(!this.completed){
-                this.timeToAchieve = 1000 / count;
-                console.log(count);
+                this.timeToAchieve = Math.pow(lifespan - count, 3); //Math.pow(count, 4);
+                console.log(count, Math.pow(lifespan - count, 3)); //Math.pow(count, 4));
             }
 
             this.completed = true;
@@ -39,14 +39,13 @@ class Rocket{
     calcFitness() {
         var d = dist(this.pos.x, this.pos.y, target.x, target.y); // target in main.js
 
-        this.fitness = 1 / d
+        this.fitness = 1 / Math.pow(d, 4);
 
         if(this.completed){
             this.fitness *= 10;
 
             this.fitness *= this.timeToAchieve;
 
-            // console.log('Count: ',this.timeToAchieve);
             console.log('----------------------');
         }
 
