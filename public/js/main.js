@@ -1,5 +1,6 @@
 var population;
 var lifespan = 200; // User in DNA.js
+var populationSize = 200; // Used in population.js
 var count = 0; // Used also in rocket.js
 var rockCrashP;
 var rockReachP;
@@ -17,7 +18,7 @@ function setup() {
 
     rockCrashP = createP().html('Rockets crashed: 0');
     rockReachP = createP().html('Rockets reached the target: 0');
-    population = new Population();
+    population = new Population(populationSize);
 
     target = createVector(width/2, 50);
 
