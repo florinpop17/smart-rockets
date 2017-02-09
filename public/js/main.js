@@ -9,6 +9,8 @@ var targetSize = 30;
 
 var rocketsReacedTarget = 0;
 
+var obstacle;
+
 function setup() {
     createCanvas(600, 600);
 
@@ -17,6 +19,8 @@ function setup() {
     population = new Population();
 
     target = createVector(width/2, 50);
+
+    obstacle = new Obstacle(width / 2, height / 2, 200, 100);
 }
 
 function draw() {
@@ -39,6 +43,7 @@ function draw() {
     fill(255, 0, 255);
     ellipse(target.x, target.y, targetSize, targetSize);
 
+    obstacle.show();
 
     population.updateRockets();
 }
