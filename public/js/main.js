@@ -13,7 +13,7 @@ var targetSize = 30;
 var rocketsReacedTarget = 0;
 var rocketsCrashed = 0;
 
-var obstacle;
+var obstacles = [];
 
 function setup() {
     createCanvas(600, 600);
@@ -59,7 +59,9 @@ function draw() {
 
     population.updateRockets(); // remove drawing to draw always
 
-    if(obstacle){
-        obstacle.show();
+    if(obstacles.length > 0){
+        obstacles.forEach(obstacle =>{
+            obstacle.show();
+        });
     }
 }

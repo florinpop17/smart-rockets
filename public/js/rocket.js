@@ -58,8 +58,13 @@ class Rocket{
     haveCrashed() {
 
         // Object crash
-        if(obstacle && this.pos.x > obstacle.x && this.pos.x < obstacle.x + obstacle.w && this.pos.y > obstacle.y && this.pos.y < obstacle.y + obstacle.h){
-            this.crashed = true;
+
+        if(obstacles.length > 0){
+            obstacles.forEach(obstacle => {
+                if(this.pos.x > obstacle.x && this.pos.x < obstacle.x + obstacle.w && this.pos.y > obstacle.y && this.pos.y < obstacle.y + obstacle.h){
+                    this.crashed = true;
+                }
+            });
         }
 
         // Screen crash
