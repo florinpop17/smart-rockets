@@ -51,7 +51,7 @@ class Rocket{
         }
 
         if(this.crashed){
-            this.fitness /= 100;
+            this.fitness /= 10;
         }
     }
 

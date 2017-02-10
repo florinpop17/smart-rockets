@@ -3,6 +3,7 @@ class Population{
         this.rockets = [];
         this.matingPool = [];
         this.popSize = popSize;
+        this.populationCount = 0;
 
         for(var i=0; i<this.popSize; i++){
             this.rockets.push(new Rocket());
@@ -84,6 +85,7 @@ class Population{
             }
         })
 
+        return fastestTime;
         console.log('Fastest arrived in: ', fastestTime);
         console.log('-----------');
     }

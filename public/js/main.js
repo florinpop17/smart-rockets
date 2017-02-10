@@ -4,6 +4,8 @@ var populationSize = 100; // Used in population.js
 var count = 0; // Used also in rocket.js
 var rockCrashP;
 var rockReachP;
+var fastestTimeP;
+var populationP;
 
 var target;
 var targetSize = 30;
@@ -20,6 +22,9 @@ function setup() {
 
     rockCrashP = createP().html('Rockets crashed: 0');
     rockReachP = createP().html('Rockets reached the target: 0');
+    fastestTimeP = createP().html('Fastest rocket arrived in: 0');
+    populationP = createP().html('Population #0');
+
     population = new Population(populationSize);
 
     target = createVector(width/2, 50);
@@ -45,7 +50,10 @@ function draw() {
 
 
         population.evaluate();
-        population.fastest();
+
+        fastestTimeP.html('Fastest rocket arrived in: '+population.fastest() || 0);
+        populationP.html('Population #'+ (++population.populationCount));
+
         population.selection();
         count = 0;
     }
