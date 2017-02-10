@@ -40,6 +40,14 @@ function draw() {
 
     if(count == lifespan){
 
+        population.evaluate();
+
+        // Get the fastest rocket
+        fastestTimeP.html('Fastest rocket arrived in: '+population.fastest() || 0);
+
+        // Get the number of the population
+        populationP.html('Population #'+ (++population.populationCount));
+
         // Calculate how many rockets reached the target
         rocketsReacedTarget = population.calculateHowManyReached();
         rockReachP.html('Rockets reached the target: '+rocketsReacedTarget);
@@ -47,12 +55,6 @@ function draw() {
         // Calculate how many rockets crashed
         rocketsCrashed = population.calculateHowManyCrashed();
         rockCrashP.html('Rockets crashed: '+rocketsCrashed);
-
-
-        population.evaluate();
-
-        fastestTimeP.html('Fastest rocket arrived in: '+population.fastest() || 0);
-        populationP.html('Population #'+ (++population.populationCount));
 
         population.selection();
         count = 0;
