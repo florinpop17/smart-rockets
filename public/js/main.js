@@ -13,6 +13,8 @@ var rocketsCrashed = 0;
 
 var obstacle;
 
+var drawing = true;
+
 function setup() {
     createCanvas(600, 600);
 
@@ -22,7 +24,9 @@ function setup() {
 
     target = createVector(width/2, 50);
 
-    obstacle = new Obstacle(width / 2 - 125, height / 2 - 10, 250, 20);
+    obstacle = new Obstacle(width / 2 - 125+1000, height / 2 - 10, 250, 20);
+
+    // setInterval(tick, 1)
 }
 
 function draw() {
@@ -41,6 +45,7 @@ function draw() {
 
 
         population.evaluate();
+        population.fastest();
         population.selection();
         count = 0;
     }
@@ -48,6 +53,9 @@ function draw() {
     fill(255, 0, 255);
     ellipse(target.x, target.y, targetSize, targetSize);
 
-    population.updateRockets();
-    obstacle.show();
+    population.updateRockets(drawing); // remove drawing to draw always
+
+    if(drawing){
+        obstacle.show();
+    }
 }

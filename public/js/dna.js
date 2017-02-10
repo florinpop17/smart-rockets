@@ -27,7 +27,7 @@ class DNA{
 
     mutation() {
         this.genes = this.genes.map((gene,idx) => {
-            if(random(1) < 0.01){
+            if(random(1) < 0.005){
                 gene = p5.Vector.random2D();
                 gene.setMag(0.5);
             }

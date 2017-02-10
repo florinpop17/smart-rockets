@@ -66,10 +66,25 @@ class Population{
         this.rockets = newRockets;
     }
 
-    updateRockets(){
+    updateRockets(drawing){
         this.rockets.forEach(rocket => {
             rocket.update();
-            rocket.show();
+
+            // Remove this to draw or set to true in main.js
+            if(drawing)
+                rocket.show();
         });
+    }
+
+    fastest() {
+        var fastestTime = 0;
+        this.rockets.forEach(rocket => {
+            if(rocket.timeToArrive > fastestTime){
+                fastestTime = rocket.timeToArrive;
+            }
+        })
+
+        console.log('Fastest arrived in: ', fastestTime);
+        console.log('-----------');
     }
 }
