@@ -1,5 +1,5 @@
 var population;
-var lifespan = 200; // User in DNA.js
+var lifespan = 300; // User in DNA.js
 var populationSize = 100; // Used in population.js
 var count = 0; // Used also in rocket.js
 var rockCrashP;
