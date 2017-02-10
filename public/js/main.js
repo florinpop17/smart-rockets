@@ -65,3 +65,9 @@ function draw() {
         });
     }
 }
+
+function mouseClicked() {
+    fill(200);
+    stroke(0);
+    obstacles.push(new Obstacle(mouseX - 15, mouseY - 15, 30, 30));
+}
