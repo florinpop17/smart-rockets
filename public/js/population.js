@@ -52,14 +52,15 @@ class Population{
         });
     }
 
-    selection() {
+    selection(_mutationLevel) {
+        var mutationLevel = _mutationLevel || 0.005; // the default
         var newRockets = [];
         this.rockets.forEach(rocket => {
             var parentA = random(this.matingPool).dna;
             var parentB = random(this.matingPool).dna;
 
             var child = parentA.crossover(parentB);
-            child.mutation();
+            child.mutation(mutationLevel);
 
             newRockets.push(new Rocket(child));
         });
@@ -81,6 +82,12 @@ class Population{
                 fastestTime = rocket.timeToArrive;
             }
         })
+
+        // if neither got to the target do another selection
+        // bigger this time 0.3
+        if(fastestTime == 0){
+            this.selection(0.3);
+        }
 
         return fastestTime;
         console.log('Fastest arrived in: ', fastestTime);

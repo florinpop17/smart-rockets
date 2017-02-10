@@ -25,9 +25,9 @@ class DNA{
         return new DNA(newGenes);
     }
 
-    mutation() {
+    mutation(mutationLevel) {
         this.genes = this.genes.map((gene,idx) => {
-            if(random(1) < 0.005){
+            if(random(1) < mutationLevel){
                 gene = p5.Vector.random2D();
                 gene.setMag(0.5);
             }
