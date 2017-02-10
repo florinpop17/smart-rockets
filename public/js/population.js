@@ -67,13 +67,10 @@ class Population{
         this.rockets = newRockets;
     }
 
-    updateRockets(drawing){
+    updateRockets(){
         this.rockets.forEach(rocket => {
             rocket.update();
-
-            // Remove this to draw or set to true in main.js
-            if(drawing)
-                rocket.show();
+            rocket.show();
         });
     }
 
