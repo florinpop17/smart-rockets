@@ -1,3 +1,8 @@
+body {
+    color: 333;
+    font-family: Roboto;
+}
+
 canvas {
     max-width: 100%;
 }
